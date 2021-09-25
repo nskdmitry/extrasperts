@@ -16,7 +16,7 @@ class CreateUserStoriesTable extends Migration
         Schema::create('user_stories', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger("id_user");
-            $table->integer("number", false, false);
+            $table->integer("number", false, true);
             $table->timestamps();
             $table->foreign("id_user")->references("id")->on("users");
         });
