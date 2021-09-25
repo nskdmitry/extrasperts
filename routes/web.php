@@ -11,6 +11,19 @@
 |
 */
 
+use App\Extrasexer;
+
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/expert', function() {
+
+});
+Route::get('/expert/{id}', function ($id) {
+    $person = Extrasexer::findOrFail($id);
+    view('extrasexer.profile', ['person' => $person, 'history' => $person->history]);
+});
+Route::get('/user/wish', function() {
+    view('wish');
+});
+Route::get('/user/wish/{id}/answer/{$number}', 'UserController@answer');
