@@ -13,4 +13,12 @@ class Extrasexer extends Model
     {
         return $this->hasMany(Divination::class);
     }
+
+    public function calcRating()
+    {
+        $items = $this->hasMany(Divination::class)->join(UserStorie::class, "id", "=", "id_history");
+        $all = $items->count("id");
+        $trues = $items->having("number", "=", "tells")->count("id");
+        return $trues / $all;
+    }
 }
