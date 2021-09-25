@@ -23,7 +23,7 @@ class ExtrasexerController extends Controller
         return Divination::create([
             'id_extra' => $id_person,
             'id_history' => $id_wish,
-            'number' => eval(static::$astral[$id_person % count(static::$astral)])
+            'telling' => eval(static::$astral[$id_person % count(static::$astral)])
         ]);
     }
 }
