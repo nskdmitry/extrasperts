@@ -47,8 +47,10 @@ class UserController extends Controller
         return $try;
     }
 
-    public function answer($id, $number)
+    public function answer(Request $request)
     {
+        $id = $request->post("id");
+        $number = $request->post("number");
         UserStorie::where("id", $id)->where("number", "<", 10)->update(["number" => $number]);
         redirect()->route('/user/wish');
     }
