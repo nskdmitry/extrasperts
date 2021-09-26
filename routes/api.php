@@ -35,3 +35,4 @@ Route::post('/user/wish', function (Request $request) {
     }
     redirect()->route("/user/wish/{$wish->id}/answer");
 });
+Route::post('/user/wish/answer', 'UserController@answer');
