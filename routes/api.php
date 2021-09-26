@@ -19,7 +19,7 @@ use App\Http\Controllers\UserController;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::post('/wish', function (Request $request) {
+Route::post('/user/wish', function (Request $request) {
     $user_helper = new UserController();
     $expert_helper = new ExtrasexerController();
 
