@@ -19,6 +19,6 @@ class Extrasexer extends Model
         $items = $this->hasMany(Divination::class)->join(UserStorie::class, "id", "=", "id_history");
         $all = $items->count("id");
         $trues = $items->having("number", "=", "tells")->count("id");
-        return $trues / $all;
+        return $all > 0 ? $trues / $all : 0;
     }
 }
