@@ -71,23 +71,11 @@
 <body>
     <div>
         @isset($person)
-            <div class="content">{{$person->name}}</div>
+            <div class="title m-b-md">{{$person->name}}</div>
             <div class="content">Уровень доверия: {{$person->calcRating}}</div>
         @endisset
         <div class="content"><h4>Почему вы можете верить этому человеку?</h4></div>
-        <ul>
-        @if(!!$history && count($history) > 0)
-            @foreach($history as $case)
-                <li><div>
-                    {{$case->userCase->created}}. Пользователь {{$case->userCase->user->name}} загадал число {{$case->userCase->number}}.
-                    И это было предсказано {{$case->created}}: {{$case->telling}}!
-                    @if(!$case->trueth)
-                        <sub class="hidden_error">Промашка вышла. Забудьте. Забудьте, вам сказано!</sub>
-                    @endif
-                </div></li>
-            @endforeach
-        @endif
-        </ul>
+        <ul>@each('extra.story', $history, 'case', 'extra.new')</ul>
     </div>
 </body>
 </html>
