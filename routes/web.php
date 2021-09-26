@@ -11,6 +11,7 @@
 |
 */
 
+use App\Divination;
 use App\Extrasexer;
 
 Route::get('/', function () {
@@ -24,6 +25,10 @@ Route::get('/expert/{id}', function ($id) {
     view('extrasexer.profile', ['person' => $person, 'history' => $person->history]);
 });
 Route::get('/user/wish', function() {
-    view('wish');
+    view('welcome');
 });
-Route::get('/user/wish/{id}/answer/{$number}', 'UserController@answer');
+Route::get("/user/wish/{id}/answer", function ($id) {
+    $divinations = Divination::where("id_history", "=", $id)->all();
+    view('answer', ['id' => $id, 'tries' => $divinations]);
+});
+
