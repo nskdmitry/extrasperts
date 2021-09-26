@@ -54,4 +54,11 @@ class UserController extends Controller
         UserStorie::where("id", $id)->where("number", "<", 10)->update(["number" => $number]);
         redirect()->route('/user/wish');
     }
+
+    public function profile($id)
+    {
+        $user = User::find($id);
+        $wishes = $user->history;
+        view("user.history", ['wishes' => $wishes, 'user' => $user]);
+    }
 }
