@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11fe9813-d0c9-4eec-958a-f0b82610e984" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/wish.item.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/extra.story.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/extra.story.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/extrasexer.profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/extrasexer.profile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/wise.form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/wish.form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_09_24_062750_create_user_stories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_09_24_062750_create_user_stories_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_09_25_060239_create_divinations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_09_25_060239_create_divinations_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +152,7 @@
       <option name="presentableId" value="Default" />
       <updated>1632465001516</updated>
       <workItem from="1632465062038" duration="22057000" />
-      <workItem from="1632619099938" duration="19419000" />
+      <workItem from="1632619099938" duration="21254000" />
     </task>
     <servers />
   </component>

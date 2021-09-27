@@ -15,9 +15,9 @@ class CreateDivinationsTable extends Migration
     {
         Schema::create('divinations', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('id_extra')->comment("This extrasexers make divination");
-            $table->bigInteger('id_history');
-            $table->bigInteger('telling')->comment("Extrasexer say: user wish a it number");
+            $table->unsignedBigInteger('id_extra')->comment("This extrasexers make divination");
+            $table->unsignedBigInteger('id_history');
+            $table->integer('telling', false, true)->comment("Extrasexer say: user wish a it number");
             $table->timestamps();
             $table->foreign('id_extra')->references('id')->on('extrasexers');
             $table->foreign('id_history')->references('id')->on('user_stories');
