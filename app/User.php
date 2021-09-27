@@ -39,6 +39,6 @@ class User extends Authenticatable
 
     public function history()
     {
-        return $this->hasMany("user_stories", "id_user", "id")->get();
+        return $this->hasMany(UserStorie::class, "id_user", "id")->get();
     }
 }
