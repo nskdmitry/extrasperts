@@ -34,6 +34,23 @@ class UserController extends Controller
         return $user;
     }
 
+    public function wish (Request $request) {
+        $user_helper = new UserController();
+        $expert_helper = new ExtrasexerController();
+
+        $login = $request->post('login');
+        $email = $request->post('email');
+        $user = User::where('email', 'LIKE', "'{$email}'")->where("login", "LIKE", "'{$login}'")->first()
+            ?? $user_helper->anoname($request);
+        $wish = $user_helper->initWish(new Request([], ['uid' => $user->id]));
+
+        $extrasexers = \App\Extrasexer::all(["id"]);
+        foreach ($extrasexers as $extrasexer) {
+            $expert_helper->divination($extrasexer->id, $wish->id);
+        }
+        redirect()->route(url("/user/wish/{$wish->id}/answer"));
+    }
+
     /**
      * @param Request $request
      * @return UserStorie
@@ -52,7 +69,7 @@ class UserController extends Controller
         $id = $request->post("id");
         $number = $request->post("number");
         UserStorie::where("id", $id)->where("number", "<", 10)->update(["number" => $number]);
-        redirect()->route('/user/wish');
+        redirect()->route('wish');
     }
 
     public function profile($id)
