@@ -21,4 +21,6 @@ class Divination extends Model
     {
         return $this->userCase()->number == $this->telling;
     }
+
+    protected $fillable = ['id_extra', 'id_history', 'telling'];
 }
