@@ -10,7 +10,7 @@
         </p>
         <p>Не мучайте нас, скажите, кто уга... кто увидел ответ!</p>
         <form action="{{url("/user/wish/answer")}}" method="post">
-            {{ csrf_field() }}
+            @csrf
             <input type="hidden" name="id" value="{{$id}}">
             <input type="number" name="number" min="10" max="99"><br/>
             <button type="submit">Дать ответ</button>

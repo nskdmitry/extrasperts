@@ -17,7 +17,7 @@
             </div>
             <div>
                 <form action="{{url('/user/wish')}}" method="post">
-                    {{ csrf_field() }}
+                    @csrf
                     <label for="login">Ваше имя: </label>
                     <input class="flex-center" type="text" name="login" placeholder="Представьтесь, пожалуйста"/><br/>
                     <label for="email">Ваша почта<sub>*</sub></label>
