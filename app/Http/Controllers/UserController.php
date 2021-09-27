@@ -40,7 +40,7 @@ class UserController extends Controller
 
         $login = $request->post('login');
         $email = $request->post('email');
-        $user = User::where('email', 'LIKE', "'{$email}'")->where("login", "LIKE", "'{$login}'")->first()
+        $user = User::where('email', 'LIKE', "'{$email}'")->first()
             ?? $user_helper->anoname($request);
         $wish = $user_helper->initWish(new Request([], ['uid' => $user->id]));
 

@@ -1,5 +1,6 @@
 <div>
     <form action="{{url('/user/wise')}}" method="post">
+        {{ csrf_field() }}
         <label for="login">Ваше имя: </label>
             <input class="flex-center" type="text" name="login" placeholder="Представьтесь, пожалуйста"/><br/>
         <label for="email">Ваша почта<sub>*</sub></label>

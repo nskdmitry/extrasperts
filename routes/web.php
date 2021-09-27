@@ -32,4 +32,6 @@ Route::get("/user/wish/{id}/answer", function ($id) {
     $divinations = Divination::where("id_history", "=", $id)->all();
     view('answer', ['id' => $id, 'tries' => $divinations, 'user' => $divinations[0]->userCase->user]);
 })->name('answer');
+Route::post('/user/wish', 'UserController@wish');
+Route::post('/user/wish/answer', 'UserController@answer');
 
