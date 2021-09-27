@@ -1,5 +1,5 @@
 <div>
-    <form action="{{route('/user/wise')}}" method="post">
+    <form action="{{url('/user/wise')}}" method="post">
         <label for="login">Ваше имя: </label>
             <input class="flex-center" type="text" name="login" placeholder="Представьтесь, пожалуйста"/><br/>
         <label for="email">Ваша почта<sub>*</sub></label>
